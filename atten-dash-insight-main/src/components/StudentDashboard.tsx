@@ -66,6 +66,10 @@ const StudentDashboard = () => {
               </div>
             </div>
             <div className="flex items-center gap-3">
+            <NavLink to={'/'}><Button variant="outline" size="sm" className="gap-2">
+                <QrCode className="h-4 w-4" />
+                Scan QR
+              </Button></NavLink>
               <NavLink to={'/scan'}><Button variant="outline" size="sm" className="gap-2">
                 <QrCode className="h-4 w-4" />
                 Scan QR
@@ -100,6 +104,7 @@ const StudentDashboard = () => {
                   </div>
                 </CardContent>
               </Card>
+              {/* hello */}
 
               <Card className="bg-gradient-card shadow-md border-0">
                 <CardContent className="p-6">
