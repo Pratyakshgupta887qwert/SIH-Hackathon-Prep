@@ -11,6 +11,8 @@ import ClassSchedulingForm from "./pages/ClassSchedulingForm"
 import NotFound from "./pages/NotFound"
 import { AuthProvider, useAuth } from "./components/AuthContext"
 import Student from "./pages/Students"
+import PhotoAttendance from "./pages/PhotoAttendance"
+import QRAttendance from "./pages/QRAttendance"
 // import AnalyticsCharts from "./pages/AnalyticsChart";
 
 const queryClient = new QueryClient()
@@ -40,8 +42,10 @@ const App = () => (
               <Route index element={<Index />} />
               <Route path="/classes" element={<ClassSchedule />} />
               <Route path="/schedule" element={<ClassSchedulingForm />} />
-              <Route path="*" element={<NotFound />} />
               <Route path="/students" element={<Student />} />
+              <Route path="/photo-attendance" element={<PhotoAttendance />} />
+              <Route path="/qr-attendance" element={<QRAttendance />} />
+              <Route path="*" element={<NotFound />} />
               {/* <Route path="/analytics" element={<AnalyticsChart />} /> */}
               
             </Route>

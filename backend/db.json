@@ -1,0 +1,95 @@
+{
+  "qr_sessions": [],
+  "attendance": [
+    {
+      "studentId": "STU001",
+      "classId": "CS101",
+      "date": "2025-08-31",
+      "time": "2025-08-31T16:42:36.924Z",
+      "status": "present",
+      "method": "photo",
+      "confidence": 0.95
+    },
+    {
+      "studentId": "STU002",
+      "classId": "CS101",
+      "date": "2025-08-31",
+      "time": "2025-08-31T16:42:36.924Z",
+      "status": "present",
+      "method": "photo",
+      "confidence": 0.92
+    }
+  ],
+  "students": [
+    {
+      "id": "STU001",
+      "name": "John Doe",
+      "email": "john@college.edu",
+      "enrollmentYear": 2022
+    },
+    {
+      "id": "STU002",
+      "name": "Jane Smith",
+      "email": "jane@college.edu",
+      "enrollmentYear": 2021
+    },
+    {
+      "id": "STU003",
+      "name": "Bob Johnson",
+      "email": "bob@college.edu",
+      "enrollmentYear": 2023
+    },
+    {
+      "id": "STU004",
+      "name": "Alice Brown",
+      "email": "alice@college.edu",
+      "enrollmentYear": 2022
+    },
+    {
+      "id": "STU005",
+      "name": "Charlie Wilson",
+      "email": "charlie@college.edu",
+      "enrollmentYear": 2021
+    }
+  ],
+  "classes": [
+    {
+      "id": "CS101",
+      "name": "Computer Science Fundamentals",
+      "instructor": "Prof. Smith",
+      "schedule": "Mon/Wed/Fri 10:00 AM"
+    },
+    {
+      "id": "MATH201",
+      "name": "Calculus II",
+      "instructor": "Prof. Johnson",
+      "schedule": "Tue/Thu 2:00 PM"
+    },
+    {
+      "id": "ENG101",
+      "name": "English Literature",
+      "instructor": "Prof. Davis",
+      "schedule": "Mon/Wed 1:00 PM"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "TCH001",
+      "name": "Prof. Smith",
+      "email": "smith@college.edu",
+      "subject": "Computer Science"
+    },
+    {
+      "id": "TCH002",
+      "name": "Prof. Johnson",
+      "email": "johnson@college.edu",
+      "subject": "Mathematics"
+    },
+    {
+      "id": "TCH003",
+      "name": "Prof. Davis",
+      "email": "davis@college.edu",
+      "subject": "English"
+    }
+  ]
+}

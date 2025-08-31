@@ -3,18 +3,37 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../components/AuthContext"; // path adjust kar
 
 const TeacherLogin = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { setUser } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (username === "teacher" && password === "12345") {
-      setUser({ name: "teacher" }); // login
-      navigate("/"); // redirect
-    } else {
-      alert("Invalid credentials!");
+    setIsLoading(true);
+    
+    try {
+      const response = await fetch("http://localhost:5000/teacher/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setUser(result.teacher);
+        navigate("/");
+      } else {
+        alert(result.message || "Invalid credentials!");
+      }
+    } catch (error) {
+      alert("Login failed. Please check your connection.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -26,24 +45,27 @@ const TeacherLogin = () => {
       >
         <h2 className="text-xl font-bold mb-4 text-center">Teacher Login</h2>
         <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          type="email"
+          placeholder="Email (e.g., smith@college.edu)"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="w-full border p-2 rounded mb-3"
+          required
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Password (demo: password)"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="w-full border p-2 rounded mb-3"
+          required
         />
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          disabled={isLoading}
+          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 disabled:opacity-50"
         >
-          Login
+          {isLoading ? "Logging in..." : "Login"}
         </button>
       </form>
     </div>
