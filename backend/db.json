@@ -1,5 +1,13 @@
 {
-  "qr_sessions": [],
+  "qr_sessions": [
+    {
+      "classId": "CS101",
+      "teacherId": "TCH001",
+      "token": "174a1f56-c109-4f53-8f5d-245e6c0d2595",
+      "expiresAt": 1756658799046,
+      "createdAt": "2025-08-31T16:46:29.046Z"
+    }
+  ],
   "attendance": [
     {
       "studentId": "STU001",
